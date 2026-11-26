@@ -2,56 +2,76 @@
 
 [עברית – מפת הדרכים](ROADMAP_HE.md)
 
-This roadmap is an initial plan. Milestones may change as research, prototypes, and testing reveal new requirements.
+This is an initial plan. Milestones may change as research and testing reveal new requirements.
 
 ## Phase 0 — Project foundation
-- [x] Create the public GitHub repository.
+- [x] Create the GitHub repository.
 - [x] Establish Hebrew and English documentation.
-- [ ] Select and document the project license.
+- [x] Agree on cross-platform direction: desktop first, mobile feasibility from day one, Android before iPhone.
+- [x] Choose a public, community-participation model with maintainer-controlled code review and merging.
+- [x] Document contribution and security expectations.
+- [ ] Configure and verify main-branch protection and pull-request review requirements in GitHub.
+- [ ] Select and document the project license before accepting code or other contributions for distribution.
 - [ ] Open initial GitHub issues for research questions and decisions.
 
-**Progress checkpoint (26 November 2026):** An initial scan of potential Hebrew niqqud engines has been completed and documented in [Engine Research](ENGINE_RESEARCH.md). Engine selection, full license review, and comparative accuracy/performance testing remain open.
+**Progress checkpoint (26 November 2026):** Preliminary engine research is documented in [Engine Research](ENGINE_RESEARCH.md). No engine has been selected; full license review and independent comparative tests remain open.
 
-**Initial target decision (26 November 2026):** The first release will target both Google Chrome and Opera Desktop. We will prefer a shared Chromium-based codebase using Manifest V3 and test both browsers separately. Compatibility is a design goal, not an unverified assumption.
+## Phase 1 — Requirements and architecture validation
+- [x] Set initial desktop targets: Google Chrome and Opera Desktop.
+- [x] Define shared-core / platform-adapter architecture as the target design.
+- [x] Document mobile strategy and platform acceptance gates.
+- [x] Define community participation through reviewed contributions; maintainers retain merge authority.
+- [ ] Define eligible Hebrew text and excluded page regions.
+- [ ] Define minimum desktop prototype scope and measurable success criteria.
+- [ ] Define initial Android and iPhone feasibility test matrix.
+- [ ] Validate browser APIs, permissions, packaging, and runtime constraints before locking implementation choices.
 
-## Phase 1 — Requirements and research
-- [ ] Define supported browsers and extension manifest version.
-- [ ] Define what counts as Hebrew text and which page regions should be excluded (for example, editable fields and code blocks).
-- [ ] Research available Hebrew niqqud models, datasets, and licenses.
-- [ ] Evaluate accuracy, ambiguity handling, model size, runtime requirements, and offline feasibility.
-- [ ] Define a representative evaluation corpus and quality metrics.
+## Phase 2 — Engine evaluation and mobile feasibility
+- [ ] Build a representative modern-Hebrew evaluation corpus: ambiguous words, names, numbers, abbreviations, slang, mixed-language, and already-vocalized content.
+- [ ] Compare at least two candidate engines on the same corpus and protocol.
+- [ ] Verify model, code, tokenizer, and runtime licenses and redistribution conditions.
+- [ ] Test ONNX Runtime Web with WASM as an initial candidate; evaluate WebGPU only where supported.
+- [ ] Measure model size, download, storage, startup, memory, throughput, and quality on desktop.
+- [ ] Run an Android proof of feasibility in parallel with desktop prototyping.
+- [ ] Record an iPhone Safari Web Extension / containing-app feasibility plan and test its critical assumptions.
 
-## Phase 2 — Minimal extension prototype
-- [ ] Create the extension manifest and toolbar interface.
+## Phase 3 — Minimal desktop extension prototype
+- [ ] Create extension manifest and toolbar interface.
 - [ ] Implement safe discovery of eligible text nodes.
-- [ ] Integrate a replaceable niqqud-engine interface.
-- [ ] Add an enable/disable interaction.
-- [ ] Preserve original text so the user can restore it.
+- [ ] Integrate replaceable niqqud-engine interface.
+- [ ] Add enable/disable interaction.
+- [ ] Preserve original text for restoration.
+- [ ] Verify shared-core behavior in Chrome and Opera Desktop.
 
-## Phase 3 — Page integrity and dynamic content
+## Phase 4 — Page integrity, dynamic content, and Android decision
 - [ ] Preserve DOM structure, styling, links, controls, and accessibility semantics.
-- [ ] Handle dynamically inserted content without repeatedly processing the same text.
+- [ ] Handle dynamically inserted content without repeated processing.
 - [ ] Avoid modifying input fields, editable content, scripts, styles, and code samples.
-- [ ] Test on long pages and complex websites.
+- [ ] Test long pages, complex websites, RTL layout, and mixed Hebrew/Latin text.
+- [ ] Decide Android delivery route from measured results; do not claim support before acceptance gates pass.
 
-## Phase 4 — Local execution and performance
-- [ ] Prototype local inference in the browser.
-- [ ] Measure startup time, memory use, throughput, and page responsiveness.
-- [ ] Investigate one-time model download and offline operation.
-- [ ] Document any unavoidable network activity.
+## Phase 5 — iPhone feasibility and platform integration
+- [ ] Prototype Safari Web Extension packaging and its containing iOS app, or document a viable companion-app workflow.
+- [ ] Measure model/runtime feasibility and permission flow on representative iPhones.
+- [ ] Decide the supported iPhone workflow based on test results.
+- [ ] Keep shared-core behavior and language-quality tests aligned across platforms.
 
-## Phase 5 — Quality and release
-- [ ] Build a test suite for niqqud quality and DOM preservation.
-- [ ] Test right-to-left rendering and mixed Hebrew/Latin text.
-- [ ] Test supported browsers and accessibility.
+## Phase 6 — Quality, privacy, security, and release
+- [ ] Complete niqqud quality, DOM preservation, restoration, performance, accessibility, and compatibility tests.
+- [ ] Review dependencies, build scripts, and GitHub Actions; apply least-privilege workflow permissions.
+- [ ] Verify network activity and publish an implementation-specific privacy policy.
+- [ ] Document the supported browser, OS, and device matrix.
 - [ ] Prepare user documentation and release notes.
-- [ ] Publish an initial version when release criteria are met.
+- [ ] Publish only on platforms that pass their documented release gates.
 
-## Guiding release criteria
-
-A first release should not be considered ready until it can:
-1. Apply niqqud to eligible Hebrew text reliably enough for the documented use cases.
-2. Preserve the page's structure and core interactions.
-3. Restore the original text without loss.
+## Release criteria
+A release on any platform must:
+1. Apply niqqud to eligible Hebrew text reliably enough for documented use cases.
+2. Preserve page structure and core interactions where page processing is supported.
+3. Restore original text without loss.
 4. Explain clearly what is processed locally and what, if anything, leaves the device.
-5. Meet documented performance and compatibility expectations.
+5. Meet documented performance and compatibility expectations for that platform.
+
+Mobile support is an explicit project goal, but it must be verified per platform and workflow rather than inferred from shared source code.
+
+Community participation is welcome, but external contributions do not enter the official codebase unless reviewed and explicitly accepted by a maintainer. Public visibility does not grant contributors direct write access.

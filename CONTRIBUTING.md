@@ -2,33 +2,42 @@
 
 [עברית – הנחיות לתרומה](CONTRIBUTING_HE.md)
 
-Thank you for your interest in Menaked Hebrew. The project is in its early planning stage, so research, careful issue reports, language-quality evaluation, and documentation are especially valuable.
+## Community participation: open, reviewed contributions
 
-## Before contributing
+Menaked welcomes community participation through discussions, bug reports, feature suggestions, documentation improvements, and pull requests.
 
-1. Read the [README](README.md), [Roadmap](ROADMAP.md), [Architecture](ARCHITECTURE.md), and [Privacy](PRIVACY.md).
-2. Check existing issues and pull requests before starting substantial work.
-3. For a major change, open an issue first so the scope and approach can be discussed.
+The repository is public, but the project's maintainers retain control of the official codebase and roadmap. Community participation does not grant write access to the main repository.
 
-## Contribution areas
+## How changes are accepted
 
-- Hebrew niqqud engine research and evaluation.
-- Browser-extension architecture and prototypes.
-- DOM safety, reversibility, and dynamic-page handling.
-- Testing, accessibility, and browser compatibility.
-- Hebrew and English documentation.
+- All code changes must be submitted through a pull request from a fork or a dedicated branch.
+- Contributors do not receive direct write access to the main branch by default.
+- No pull request is merged automatically. A maintainer must inspect the complete diff, rationale, dependencies, and relevant tests before deciding.
+- Changes to architecture, security, privacy, the niqqud engine, supported platforms, or licensing require explicit maintainer review.
+- Maintainers may request changes or close a pull request without merging it.
+- Issues and discussions are welcome; maintainers decide what enters the roadmap.
+
+## Security rules for contributors and maintainers
+
+- Never submit passwords, API keys, tokens, personal data, or other secrets.
+- Do not add dependencies, build scripts, GitHub Actions, binaries, or model files without explaining their source, purpose, license, and risks.
+- Treat all external code, packages, datasets, model weights, and links as untrusted until reviewed.
+- Do not run untrusted code or install dependencies from a contribution on a machine containing credentials or sensitive files.
+- Pull-request workflows must use least-privilege permissions and must not expose secrets to untrusted code.
+- Maintainers should review workflow changes and dependency changes with particular care.
+- Report suspected vulnerabilities privately to the maintainers rather than publishing exploit details in an issue.
 
 ## Pull request expectations
 
-- Keep changes focused and explain the problem they solve.
-- Include tests or reproducible steps when applicable.
+- Keep each change focused and explain the problem it solves.
+- Include tests or reproducible steps where applicable.
 - Document limitations and known risks.
 - Update both Hebrew and English documentation when changing project-level behavior or decisions.
-- Do not include private data, credentials, or copyrighted datasets without appropriate rights.
+- Use only content and datasets that may lawfully be contributed and redistributed.
 
 ## Project decisions
 
-Technical choices are not final until they are discussed and documented. Please do not assume a particular model, framework, browser target, or license has been selected.
+Technical choices are not final until discussed and documented. No particular model, framework, browser target, or license should be assumed selected unless the project documentation says so.
 
 ## Code of conduct
 
