@@ -2,6 +2,22 @@
 
 This file records notable project changes. | קובץ זה מתעד שינויים משמעותיים בפרויקט.
 
+## [Unreleased] — Private-first development decision
+
+### Added
+- Confirmed that the initial Menaked development phase will be private-first.
+- Paused external code contributions and public pull-request intake until a separate opening decision.
+- Added bilingual development governance guidance and updated the roadmap.
+- Recorded that repository visibility is currently public and must be handled as a separate explicit setting change.
+
+### Not yet implemented
+- Browser extension code.
+- Hebrew niqqud engine integration.
+- Android or iOS application/extension.
+- Automated tests and release packages.
+
+---
+
 ## [Unreleased] — Cross-platform planning update
 
 ### Added
@@ -15,6 +31,22 @@ This file records notable project changes. | קובץ זה מתעד שינויי
 - Hebrew niqqud engine integration.
 - Android or iOS application/extension.
 - Automated tests and release packages.
+
+---
+
+## [טרם שוחרר] — החלטה על פיתוח פרטי תחילה
+
+### נוסף
+- אושר ששלב הפיתוח הראשוני של מְנַקֵּד יתנהל במודל פרטי תחילה.
+- הושהו תרומות קוד חיצוניות וקבלת Pull Requests ציבוריים עד להחלטה נפרדת על פתיחת הפרויקט.
+- נוספו הנחיות ניהול פרויקט בעברית ובאנגלית ועודכנה מפת הדרכים.
+- תועד שמאגר GitHub מוגדר כרגע כציבורי ושיש לטפל בהגדרת הנראות שלו כשינוי נפרד ומפורש.
+
+### טרם מומש
+- קוד של תוסף הדפדפן.
+- שילוב מנוע ניקוד עברי.
+- אפליקציה או הרחבה ל-Android או ל-iOS.
+- בדיקות אוטומטיות וחבילות הפצה.
 
 ---
 
