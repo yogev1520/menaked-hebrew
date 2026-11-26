@@ -19,6 +19,16 @@ The goal is not simply to put more screen time in front of children. It is to gi
 At its heart, Menaked is a project built with love for our children and with the hope that technology can help them grow.
 
 
+## The Soul of the Letters
+
+**“Letters without niqqud are like a body without a soul.”**
+
+In Hebrew, niqqud is much more than a set of small marks above and below letters. It gives words their voice, their sound, and their meaning. It helps transform written text into something readable, understandable, and alive.
+
+Menaked was born from the belief that every child deserves an opportunity to connect with the Hebrew language in a way that fits the world they are growing up in. We want to take the technology children already love and turn it into a tool that brings them closer to reading, learning, and appreciating their language.
+
+Because in the end, we are not simply adding vowel points to words — we want to give letters their voice.
+
 ## Product principles
 
 - **Preserve the page:** retain the original layout, styling, images, links, buttons, and document structure wherever possible.
