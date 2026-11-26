@@ -2,15 +2,16 @@
 
 This file records notable project changes. | קובץ זה מתעד שינויים משמעותיים בפרויקט.
 
-## [Unreleased] — Private-first development decision
+## [Unreleased] — Community participation and contribution safeguards
 
 ### Added
-- Confirmed that the initial Menaked development phase will be private-first.
-- Paused external code contributions and public pull-request intake until a separate opening decision.
-- Added bilingual development governance guidance and updated the roadmap.
-- Recorded that repository visibility is currently public and must be handled as a separate explicit setting change.
+- Confirmed that Menaked welcomes community issues, discussions, documentation improvements, and pull requests.
+- Established maintainer-controlled review and merge: no external contribution enters the official codebase automatically.
+- Added bilingual contribution and security guidance, including careful review of dependencies and automation workflows.
+- Added main-branch protection configuration and verification as an explicit project task.
 
 ### Not yet implemented
+- GitHub branch protection has not yet been verified or configured through this workflow.
 - Browser extension code.
 - Hebrew niqqud engine integration.
 - Android or iOS application/extension.
@@ -34,58 +35,17 @@ This file records notable project changes. | קובץ זה מתעד שינויי
 
 ---
 
-## [טרם שוחרר] — החלטה על פיתוח פרטי תחילה
+## [טרם שוחרר] — השתתפות הקהילה והגנות על התרומות
 
 ### נוסף
-- אושר ששלב הפיתוח הראשוני של מְנַקֵּד יתנהל במודל פרטי תחילה.
-- הושהו תרומות קוד חיצוניות וקבלת Pull Requests ציבוריים עד להחלטה נפרדת על פתיחת הפרויקט.
-- נוספו הנחיות ניהול פרויקט בעברית ובאנגלית ועודכנה מפת הדרכים.
-- תועד שמאגר GitHub מוגדר כרגע כציבורי ושיש לטפל בהגדרת הנראות שלו כשינוי נפרד ומפורש.
+- אושר שמְנַקֵּד מזמין Issues, דיונים, שיפורי תיעוד ו-Pull Requests מהקהילה.
+- נקבע שמנהלי הפרויקט שולטים בבדיקה ובמיזוג; שום תרומה חיצונית לא נכנסת לקוד הרשמי באופן אוטומטי.
+- נוספו הנחיות תרומה ואבטחה בעברית ובאנגלית, כולל בדיקה קפדנית של תלויות ותהליכי אוטומציה.
+- נוספה הגדרת הגנת הענף הראשי ואימותה כמשימה מפורשת בפרויקט.
 
 ### טרם מומש
+- הגנת הענף הראשי ב-GitHub עדיין לא אומתה או הוגדרה באמצעות תהליך זה.
 - קוד של תוסף הדפדפן.
 - שילוב מנוע ניקוד עברי.
 - אפליקציה או הרחבה ל-Android או ל-iOS.
-- בדיקות אוטומטיות וחבילות הפצה.
-
----
-
-## [טרם שוחרר] — עדכון תכנון חוצה־פלטפורמות
-
-### נוסף
-- אושר כיוון המוצר: מחשב תחילה, בדיקות היתכנות לסלולר מהיום הראשון, Android לפני iPhone.
-- נוספה אסטרטגיית סלולר בעברית ובאנגלית, הכוללת מגבלות פלטפורמה ותנאי קבלה.
-- עודכנה הארכיטקטורה להפרדה בין ליבה משותפת למתאמים ייעודיים.
-- הורחבה מפת הדרכים כך שתכלול בדיקות היתכנות לסלולר במקביל ותנאי השקה לכל פלטפורמה.
-
-### טרם מומש
-- קוד של תוסף הדפדפן.
-- שילוב מנוע ניקוד עברי.
-- אפליקציה או הרחבה ל-Android או ל-iOS.
-- בדיקות אוטומטיות וחבילות הפצה.
-
----
-
-## [Unreleased] — Initial planning
-
-### Added
-- Created the public GitHub repository.
-- Added bilingual project overview, roadmap, proposed architecture, contribution guidelines, and preliminary privacy statement.
-
-### Not yet implemented
-- Browser extension code.
-- Hebrew niqqud engine integration.
-- Automated tests and release packages.
-
----
-
-## [טרם שוחרר] — תכנון ראשוני
-
-### נוסף
-- נוצר מאגר GitHub ציבורי.
-- נוספו סקירת פרויקט, מפת דרכים, ארכיטקטורה מוצעת, הנחיות לתרומה והצהרת פרטיות ראשונית — בעברית ובאנגלית.
-
-### טרם מומש
-- קוד של תוסף הדפדפן.
-- שילוב מנוע ניקוד עברי.
 - בדיקות אוטומטיות וחבילות הפצה.
