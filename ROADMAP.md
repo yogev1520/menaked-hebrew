@@ -35,12 +35,12 @@ This is an initial plan. Milestones may change as research and testing reveal ne
 - [ ] Record and test the critical assumptions of the iPhone Safari Web Extension / containing-app path.
 
 ## Phase 3 — Minimal desktop extension prototype
-- [ ] Scaffold the WXT + TypeScript project.
-- [ ] Create the Manifest V3 action and minimal popup.
-- [ ] Implement safe discovery of eligible text nodes.
-- [ ] Integrate a deterministic mock NiqqudEngine behind the shared interface.
-- [ ] Add apply/restore interaction with exact original-text preservation.
-- [ ] Verify behavior in Chrome and Opera Desktop.
+- [x] Scaffold the WXT + TypeScript project.
+- [x] Create the Manifest V3 action and minimal Hebrew popup.
+- [x] Add a deterministic mock-engine contract and reversible page-transformation proof of concept.
+- [ ] Install dependencies and verify TypeScript, unit tests, and production build.
+- [ ] Test active-tab injection and apply/restore behavior in Chrome and Opera Desktop.
+- [ ] Add integration tests for exact restoration and external DOM changes.
 
 ## Phase 4 — Page integrity, dynamic content, and Android decision
 - [ ] Preserve DOM structure, styling, links, controls, and accessibility semantics.
