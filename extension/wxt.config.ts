@@ -2,6 +2,7 @@ import { defineConfig } from "wxt";
 
 export default defineConfig({
   manifest: {
+    manifest_version: 3,
     name: "מְנַקֵּד – ניקוד עברי",
     description: "אב־טיפוס להוספת ניקוד לטקסט עברי בדף האינטרנט",
     version: "0.1.0",
