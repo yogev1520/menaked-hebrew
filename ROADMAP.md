@@ -8,9 +8,10 @@ This is an initial plan. Milestones may change as research and testing reveal ne
 - [x] Create the GitHub repository.
 - [x] Establish Hebrew and English documentation.
 - [x] Agree on cross-platform direction: desktop first, mobile feasibility from day one, Android before iPhone.
-- [x] Choose a private-first development model: no public contribution program during the initial build phase.
-- [ ] Confirm and apply the required GitHub repository visibility (the repository is currently public).
-- [ ] Select and document the project license before any public release or external contribution program.
+- [x] Choose a public, community-participation model with maintainer-controlled code review and merging.
+- [x] Document contribution and security expectations.
+- [ ] Configure and verify main-branch protection and pull-request review requirements in GitHub.
+- [ ] Select and document the project license before accepting code or other contributions for distribution.
 - [ ] Open initial GitHub issues for research questions and decisions.
 
 **Progress checkpoint (26 November 2026):** Preliminary engine research is documented in [Engine Research](ENGINE_RESEARCH.md). No engine has been selected; full license review and independent comparative tests remain open.
@@ -19,7 +20,7 @@ This is an initial plan. Milestones may change as research and testing reveal ne
 - [x] Set initial desktop targets: Google Chrome and Opera Desktop.
 - [x] Define shared-core / platform-adapter architecture as the target design.
 - [x] Document mobile strategy and platform acceptance gates.
-- [x] Define the initial private-first contribution policy.
+- [x] Define community participation through reviewed contributions; maintainers retain merge authority.
 - [ ] Define eligible Hebrew text and excluded page regions.
 - [ ] Define minimum desktop prototype scope and measurable success criteria.
 - [ ] Define initial Android and iPhone feasibility test matrix.
@@ -55,12 +56,12 @@ This is an initial plan. Milestones may change as research and testing reveal ne
 - [ ] Decide the supported iPhone workflow based on test results.
 - [ ] Keep shared-core behavior and language-quality tests aligned across platforms.
 
-## Phase 6 — Quality, privacy, and release
+## Phase 6 — Quality, privacy, security, and release
 - [ ] Complete niqqud quality, DOM preservation, restoration, performance, accessibility, and compatibility tests.
+- [ ] Review dependencies, build scripts, and GitHub Actions; apply least-privilege workflow permissions.
 - [ ] Verify network activity and publish an implementation-specific privacy policy.
 - [ ] Document the supported browser, OS, and device matrix.
 - [ ] Prepare user documentation and release notes.
-- [ ] Decide whether and under what license to open the project to outside contributors.
 - [ ] Publish only on platforms that pass their documented release gates.
 
 ## Release criteria
@@ -73,4 +74,4 @@ A release on any platform must:
 
 Mobile support is an explicit project goal, but it must be verified per platform and workflow rather than inferred from shared source code.
 
-The initial development phase is private-first. Opening the project to outside contributions is a later, explicit project decision—not an automatic consequence of reaching a particular milestone.
+Community participation is welcome, but external contributions do not enter the official codebase unless reviewed and explicitly accepted by a maintainer. Public visibility does not grant contributors direct write access.
