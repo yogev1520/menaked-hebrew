@@ -10,6 +10,8 @@ This roadmap is an initial plan. Milestones may change as research, prototypes, 
 - [ ] Select and document the project license.
 - [ ] Open initial GitHub issues for research questions and decisions.
 
+**Progress checkpoint (26 November 2026):** An initial scan of potential Hebrew niqqud engines has been completed and documented in [Engine Research](ENGINE_RESEARCH.md). Engine selection, full license review, and comparative accuracy/performance testing remain open.
+
 ## Phase 1 — Requirements and research
 - [ ] Define supported browsers and extension manifest version.
 - [ ] Define what counts as Hebrew text and which page regions should be excluded (for example, editable fields and code blocks).
