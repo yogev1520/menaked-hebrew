@@ -12,6 +12,8 @@ This roadmap is an initial plan. Milestones may change as research, prototypes, 
 
 **Progress checkpoint (26 November 2026):** An initial scan of potential Hebrew niqqud engines has been completed and documented in [Engine Research](ENGINE_RESEARCH.md). Engine selection, full license review, and comparative accuracy/performance testing remain open.
 
+**Initial target decision (26 November 2026):** The first release will target both Google Chrome and Opera Desktop. We will prefer a shared Chromium-based codebase using Manifest V3 and test both browsers separately. Compatibility is a design goal, not an unverified assumption.
+
 ## Phase 1 — Requirements and research
 - [ ] Define supported browsers and extension manifest version.
 - [ ] Define what counts as Hebrew text and which page regions should be excluded (for example, editable fields and code blocks).
