@@ -10,6 +10,15 @@ Menaked is a browser extension designed to make Hebrew text easier to read and l
 
 The intended experience is similar to a browser translation feature: activate the extension, let the page update, and continue reading in the same visual environment.
 
+## Why we started | The children behind the idea
+
+This idea was born from a very personal place: our wonderful children, who, like so many children growing up today, love using phones and digital screens. We wanted to turn an environment they already enjoy into an opportunity to practice reading Hebrew.
+
+The goal is not simply to put more screen time in front of children. It is to give them a tool they enjoy using, so that reading practice can feel more natural, accessible, and engaging. By adding niqqud to Hebrew text they encounter online, we hope to help make everyday digital experiences also support reading development.
+
+At its heart, Menaked is a project built with love for our children and with the hope that technology can help them grow.
+
+
 ## Product principles
 
 - **Preserve the page:** retain the original layout, styling, images, links, buttons, and document structure wherever possible.
