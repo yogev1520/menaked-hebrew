@@ -2,50 +2,55 @@
 
 This file records notable project changes. | קובץ זה מתעד שינויים משמעותיים בפרויקט.
 
+## [Unreleased] — Initial technical baseline
+
+### Added
+- Selected TypeScript and WXT as the initial desktop development baseline.
+- Selected Manifest V3 for the Chrome and Opera desktop prototype.
+- Established least-privilege, user-initiated active-tab access as the permission direction.
+- Defined a replaceable NiqqudEngine interface and mock-engine-first prototype.
+- Documented ONNX Runtime Web with WASM as an inference candidate, not a production commitment.
+- Added a bilingual, reproducible niqqud engine evaluation protocol.
+- Kept final model selection open pending same-corpus accuracy, runtime, resource, and license tests.
+
+### Not yet implemented
+- Browser extension source code.
+- Real niqqud model integration.
+- Verified local/offline inference in an extension context.
+- Android or iOS application/extension.
+- Automated browser compatibility tests.
+
+---
+
 ## [Unreleased] — Community participation and contribution safeguards
 
 ### Added
 - Confirmed that Menaked welcomes community issues, discussions, documentation improvements, and pull requests.
-- Established maintainer-controlled review and merge: no external contribution enters the official codebase automatically.
-- Added bilingual contribution and security guidance, including careful review of dependencies and automation workflows.
-- Added main-branch protection configuration and verification as an explicit project task.
+- Established maintainer-controlled review and merge.
+- Added bilingual contribution and security guidance.
 
 ### Not yet implemented
-- GitHub branch protection has not yet been verified or configured through this workflow.
-- Browser extension code.
-- Hebrew niqqud engine integration.
+- GitHub branch protection has not yet been verified or configured.
+- Browser extension code or model integration.
 - Android or iOS application/extension.
 - Automated tests and release packages.
 
 ---
 
-## [Unreleased] — Cross-platform planning update
-
-### Added
-- Approved direction: desktop first, mobile feasibility from day one, Android before iPhone.
-- Added bilingual mobile strategy with platform constraints and acceptance gates.
-- Updated proposed architecture to separate shared core logic from platform-specific adapters.
-- Expanded roadmap with parallel mobile feasibility work and platform-specific release gates.
-
-### Not yet implemented
-- Browser extension code.
-- Hebrew niqqud engine integration.
-- Android or iOS application/extension.
-- Automated tests and release packages.
-
----
-
-## [טרם שוחרר] — השתתפות הקהילה והגנות על התרומות
+## [טרם שוחרר] — בסיס טכנולוגי ופרוטוקול הערכה
 
 ### נוסף
-- אושר שמְנַקֵּד מזמין Issues, דיונים, שיפורי תיעוד ו-Pull Requests מהקהילה.
-- נקבע שמנהלי הפרויקט שולטים בבדיקה ובמיזוג; שום תרומה חיצונית לא נכנסת לקוד הרשמי באופן אוטומטי.
-- נוספו הנחיות תרומה ואבטחה בעברית ובאנגלית, כולל בדיקה קפדנית של תלויות ותהליכי אוטומציה.
-- נוספה הגדרת הגנת הענף הראשי ואימותה כמשימה מפורשת בפרויקט.
+- נבחרו TypeScript ו-WXT כבסיס הפיתוח הראשוני למחשב.
+- נבחר Manifest V3 לאב־טיפוס Chrome ו-Opera למחשב.
+- הוגדר כיוון הרשאות מצומצם, המבוסס על גישה ללשונית הפעילה בעקבות פעולת משתמש.
+- הוגדר ממשק NiqqudEngine שניתן להחלפה ואסטרטגיית התחלה עם מנוע דמה.
+- תועד ONNX Runtime Web עם WASM כמועמד להרצה, ולא כהתחייבות לייצור.
+- נוסף פרוטוקול דו־לשוני ובר־שחזור להערכת מנועי ניקוד.
+- בחירת המודל הסופי נשארה פתוחה עד לבדיקות דיוק, סביבת הרצה, משאבים ורישוי על אותו קורפוס.
 
 ### טרם מומש
-- הגנת הענף הראשי ב-GitHub עדיין לא אומתה או הוגדרה באמצעות תהליך זה.
-- קוד של תוסף הדפדפן.
-- שילוב מנוע ניקוד עברי.
+- קוד מקור של תוסף הדפדפן.
+- שילוב מודל ניקוד אמיתי.
+- הרצת הסקה מקומית/לא מקוונת מאומתת בתוך התוסף.
 - אפליקציה או הרחבה ל-Android או ל-iOS.
-- בדיקות אוטומטיות וחבילות הפצה.
+- בדיקות תאימות אוטומטיות לדפדפנים.
