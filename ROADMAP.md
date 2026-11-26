@@ -12,41 +12,40 @@ This is an initial plan. Milestones may change as research and testing reveal ne
 - [x] Document contribution and security expectations.
 - [ ] Configure and verify main-branch protection and pull-request review requirements in GitHub.
 - [ ] Select and document the project license before accepting code or other contributions for distribution.
-- [ ] Open initial GitHub issues for research questions and decisions.
-
-**Progress checkpoint (26 November 2026):** Preliminary engine research is documented in [Engine Research](ENGINE_RESEARCH.md). No engine has been selected; full license review and independent comparative tests remain open.
 
 ## Phase 1 — Requirements and architecture validation
 - [x] Set initial desktop targets: Google Chrome and Opera Desktop.
-- [x] Define shared-core / platform-adapter architecture as the target design.
+- [x] Define shared-core / platform-adapter architecture.
 - [x] Document mobile strategy and platform acceptance gates.
-- [x] Define community participation through reviewed contributions; maintainers retain merge authority.
+- [x] Select initial desktop development baseline: TypeScript, WXT, Manifest V3.
+- [x] Define least-privilege permission direction for the prototype (user-initiated active-tab access).
+- [x] Define replaceable NiqqudEngine boundary and mock-engine-first strategy.
+- [x] Document initial ONNX Runtime Web/WASM evaluation path without committing to production inference.
 - [ ] Define eligible Hebrew text and excluded page regions.
 - [ ] Define minimum desktop prototype scope and measurable success criteria.
 - [ ] Define initial Android and iPhone feasibility test matrix.
-- [ ] Validate browser APIs, permissions, packaging, and runtime constraints before locking implementation choices.
 
 ## Phase 2 — Engine evaluation and mobile feasibility
 - [ ] Build a representative modern-Hebrew evaluation corpus: ambiguous words, names, numbers, abbreviations, slang, mixed-language, and already-vocalized content.
 - [ ] Compare at least two candidate engines on the same corpus and protocol.
-- [ ] Verify model, code, tokenizer, and runtime licenses and redistribution conditions.
-- [ ] Test ONNX Runtime Web with WASM as an initial candidate; evaluate WebGPU only where supported.
+- [ ] Verify model, code, tokenizer, data, and runtime licenses and redistribution conditions.
+- [ ] Test ONNX Runtime Web with WASM; evaluate WebGPU only where supported.
 - [ ] Measure model size, download, storage, startup, memory, throughput, and quality on desktop.
 - [ ] Run an Android proof of feasibility in parallel with desktop prototyping.
-- [ ] Record an iPhone Safari Web Extension / containing-app feasibility plan and test its critical assumptions.
+- [ ] Record and test the critical assumptions of the iPhone Safari Web Extension / containing-app path.
 
 ## Phase 3 — Minimal desktop extension prototype
-- [ ] Create extension manifest and toolbar interface.
+- [ ] Scaffold the WXT + TypeScript project.
+- [ ] Create the Manifest V3 action and minimal popup.
 - [ ] Implement safe discovery of eligible text nodes.
-- [ ] Integrate replaceable niqqud-engine interface.
-- [ ] Add enable/disable interaction.
-- [ ] Preserve original text for restoration.
-- [ ] Verify shared-core behavior in Chrome and Opera Desktop.
+- [ ] Integrate a deterministic mock NiqqudEngine behind the shared interface.
+- [ ] Add apply/restore interaction with exact original-text preservation.
+- [ ] Verify behavior in Chrome and Opera Desktop.
 
 ## Phase 4 — Page integrity, dynamic content, and Android decision
 - [ ] Preserve DOM structure, styling, links, controls, and accessibility semantics.
 - [ ] Handle dynamically inserted content without repeated processing.
-- [ ] Avoid modifying input fields, editable content, scripts, styles, and code samples.
+- [ ] Avoid modifying input fields, editable content, scripts, styles, templates, and code samples.
 - [ ] Test long pages, complex websites, RTL layout, and mixed Hebrew/Latin text.
 - [ ] Decide Android delivery route from measured results; do not claim support before acceptance gates pass.
 
