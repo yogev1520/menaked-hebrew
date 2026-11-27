@@ -13,12 +13,14 @@ button.addEventListener("click", async () => {
   status.textContent = "מעבד את העמוד…";
 
   try {
-    const [tab] = await browser.tabs.query({
+    const tabs = await browser.tabs.query({
       active: true,
       currentWindow: true,
     });
 
-    if (typeof tab.id !== "number") {
+    const tab = tabs[0];
+
+    if (!tab || typeof tab.id !== "number") {
       throw new Error("לא נמצאה לשונית פעילה.");
     }
 
@@ -37,7 +39,7 @@ button.addEventListener("click", async () => {
       status.textContent = `הטקסט המקורי שוחזר (${result.restored} צומתי טקסט).`;
     } else {
       button.textContent = "שחזר טקסט מקורי";
-      status.textContent = result.changed > 0
+      status.textContent = (result.changed ?? 0) > 0
         ? `הוחל ניקוד לדוגמה ב-${result.changed} צומתי טקסט.`
         : "לא נמצאו בדף מילים ממאגר הדוגמאות.";
     }
