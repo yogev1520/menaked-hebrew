@@ -2,21 +2,18 @@
 
 [עברית – מודל נתונים למילון העברי](LEXICON_DATA_MODEL_HE.md)
 
-**Status:** Initial data-schema proposal. It is not yet connected to extension code and is not a final standard.
+**Status:** Initial runtime integration. The extension now reads its prototype vocabulary from `extension/src/dictionary/lexicon.ts`. This is draft data, not a production linguistic resource.
 
-## 1. Goals
+## Runtime model
 
-Menaked's lexicon must not be a simple one-word-to-one-vocalization map. It should represent:
-- An unvocalized Hebrew spelling.
-- One or more vocalized readings for that spelling.
-- Part of speech and grammatical features.
-- Meaning or usage.
-- Sentence examples illustrating each reading.
-- Data provenance and review status.
+- A spelling entry (`surface`) contains one or more `readings`.
+- Each reading has a stable local ID, vocalized form, part of speech, optional lemma, sense, grammatical features, and review status.
+- `unclassified` marks legacy prototype vocabulary whose part of speech has not yet been reviewed.
+- `draft` means the reading has not received formal linguistic review.
 
-## 2. Core principle: spelling is not meaning
+## Ambiguity policy
 
-The same sequence of letters can represent more than one word or grammatical form. A spelling entry therefore contains an array of possible readings rather than one vocalization field.
+The runtime helper `getUnambiguousVocalization` returns a vocalized form only when an entry has exactly one reading. Entries with multiple readings are not passed to the simple page dictionary and remain unchanged by the mock engine. Array order is never used to choose a reading.
 
 Examples:
 - ספר: סֵפֶר (noun), סָפַר (verb), סַפָּר (noun).
@@ -24,81 +21,28 @@ Examples:
 - דרך: דֶּרֶךְ (noun), דָּרַךְ (verb).
 - חדש: חָדָשׁ (adjective), חֹדֶשׁ (noun).
 
-These examples illustrate why multiple readings are needed. Every production entry must receive linguistic review before it is used for automatic decisions.
+## Source of truth
 
-## 3. Proposed fields
+`extension/src/dictionary/lexicon.ts` is the single runtime data source. `basic.ts` is a compatibility export derived from unambiguous entries; it must not contain a second hand-maintained word list.
 
-### Spelling entry
-- `id`: stable unique identifier.
-- `surface`: unvocalized spelling as it appears in text.
-- `normalization`: normalization policy applied; never discard or alter the exact original text.
-- `readings`: list of possible readings.
+## Data quality and limitations
 
-### Candidate reading
-- `id`: identifier within the entry.
-- `vocalized`: vocalized form.
-- `lemma`: base form, when known.
-- `partOfSpeech`: part of speech.
-- `features`: grammatical features such as gender, number, person, tense, binyan, and pattern.
-- `sense`: concise meaning description.
-- `examples`: contextual examples with source and vocalized sentences.
-- `reviewStatus`: linguistic review status.
-- `provenance`: data source and licensing note.
+All imported seed readings remain `draft`. Existing prototype words without reviewed grammatical classification use `unclassified`. This dataset is useful for schema, integration, and regression testing only. Do not describe it as a complete or linguistically verified Hebrew lexicon.
 
-## 4. Data rules
+## Rules
 
-1. Store comparison forms in Unicode NFC, but preserve exact original text separately for restoration.
-2. Do not strip existing niqqud before an explicit mixed-text policy is defined.
-3. Do not assume every lexicon entry is unambiguous.
-4. Never select a reading based on array order.
-5. Distinguish linguistically reviewed data from unreviewed proposals.
-6. Record source and license for all externally sourced data.
-7. Separate the general lexicon from proper names, abbreviations, acronyms, and domain-specific terms.
+1. Normalize lookup keys to Unicode NFC.
+2. Preserve exact source text separately for restoration.
+3. Do not strip existing niqqud unless a separate explicit policy permits it.
+4. Do not select among multiple readings without contextual analysis.
+5. Keep linguistic review status explicit.
+6. Record source and licensing information before adding externally sourced data.
+7. Keep names, abbreviations, acronyms, and domain-specific terms separable from the general lexicon.
 
-## 5. Conceptual JSON example
+## Acceptance criteria
 
-```json
-{
-  "schemaVersion": 1,
-  "language": "he",
-  "entries": [
-    {
-      "id": "he-sefer",
-      "surface": "ספר",
-      "readings": [
-        {
-          "id": "book",
-          "vocalized": "סֵפֶר",
-          "partOfSpeech": "noun",
-          "sense": "A book for reading",
-          "reviewStatus": "draft"
-        },
-        {
-          "id": "counted",
-          "vocalized": "סָפַר",
-          "partOfSpeech": "verb",
-          "sense": "Counted items",
-          "reviewStatus": "draft"
-        }
-      ]
-    }
-  ]
-}
-```
-
-This is a schema illustration only. It must not be used as a production lexicon until grammatical features, examples, and linguistic review are complete.
-
-## 6. What does not belong in the lexicon
-
-The lexicon must not make contextual decisions by itself. Syntax, context, neighboring-word evidence, candidate ranking, and confidence belong to the analysis and disambiguation components.
-
-This separation allows the context analyzer to improve without changing the underlying data model.
-
-## 7. Version-one acceptance criteria
-
-- The schema supports multiple readings for one spelling.
-- Every reading has a vocalized form and part of speech.
-- Meanings and examples can be attached.
-- Review status and data provenance are explicit.
-- Uncertain data is not presented as verified.
-- Schema validation and duplicate-ID checks are available.
+- Multiple readings are represented without losing their grammatical metadata.
+- The active prototype uses the same lexicon data source.
+- Ambiguous and unknown words remain unchanged.
+- Existing single-reading prototype vocabulary remains available.
+- Tests cover lookup, ambiguity, normalization, and regression behavior.
