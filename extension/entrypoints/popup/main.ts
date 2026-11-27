@@ -1,5 +1,7 @@
+
 import { browser } from "wxt/browser";
 import { togglePageNiqqudDemo } from "../../src/core/page-transform";
+import { basicDictionary } from "../../src/dictionary/basic";
 
 const button = document.querySelector<HTMLButtonElement>("#toggle");
 const status = document.querySelector<HTMLElement>("#status");
@@ -27,9 +29,11 @@ button.addEventListener("click", async () => {
     const results = await browser.scripting.executeScript({
       target: { tabId: tab.id },
       func: togglePageNiqqudDemo,
+      args: [basicDictionary],
     });
 
     const result = results[0]?.result;
+
     if (!result) {
       throw new Error("לא התקבלה תוצאה מהעמוד.");
     }
@@ -41,7 +45,7 @@ button.addEventListener("click", async () => {
       button.textContent = "שחזר טקסט מקורי";
       status.textContent = (result.changed ?? 0) > 0
         ? `הוחל ניקוד לדוגמה ב-${result.changed} צומתי טקסט.`
-        : "לא נמצאו בדף מילים ממאגר הדוגמאות.";
+        : "לא נמצאו מילים מתאימות במילון.";
     }
   } catch (error) {
     const message = error instanceof Error ? error.message : "שגיאה לא ידועה";
