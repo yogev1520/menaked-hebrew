@@ -36,11 +36,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run unit tests
-        run: npm test
-
       - name: Prepare WXT types
         run: npx wxt prepare
+
+      - name: Run unit tests
+        run: npm test
 
       - name: Check TypeScript
         run: npm run typecheck
