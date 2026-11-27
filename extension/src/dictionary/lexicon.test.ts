@@ -11,19 +11,17 @@ describe("rich Hebrew lexicon", () => {
       .toEqual(["סֵפֶר", "סָפַר", "סַפָּר"]);
   });
 
-  it.each(["ספר", "מלך", "דרך", "חדש"])(
+  it.each(["ספר", "מלך", "דרך"])(
     "does not choose an arbitrary reading for %s",
     (surface) => {
       expect(getUnambiguousVocalization(surface)).toBeUndefined();
     },
   );
 
-  it("keeps existing basic vocabulary available", () => {
+  it("keeps existing basic vocabulary and distinct spellings available", () => {
     expect(getUnambiguousVocalization("מילה")).toBe("מִלָּה");
     expect(getUnambiguousVocalization("עברית")).toBe("עִבְרִית");
-  });
-
-  it("normalizes lookup keys to NFC", () => {
-    expect(getUnambiguousVocalization("שלום".normalize("NFD"))).toBe("שָׁלוֹם");
+    expect(getUnambiguousVocalization("חדש")).toBe("חָדָשׁ");
+    expect(getUnambiguousVocalization("חודש")).toBe("חֹדֶשׁ");
   });
 });

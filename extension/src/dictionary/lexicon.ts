@@ -570,14 +570,6 @@ const entries: readonly LexiconEntry[] = [
           "number": "singular"
         },
         "reviewStatus": "draft"
-      },
-      {
-        "id": "month",
-        "vocalized": "חֹדֶשׁ",
-        "lemma": "חֹדֶשׁ",
-        "partOfSpeech": "noun",
-        "sense": "חודש",
-        "reviewStatus": "draft"
       }
     ]
   },
@@ -614,11 +606,11 @@ const entries: readonly LexiconEntry[] = [
     "surface": "חודש",
     "readings": [
       {
-        "id": "default",
+        "id": "month",
         "vocalized": "חֹדֶשׁ",
         "lemma": "חֹדֶשׁ",
-        "partOfSpeech": "unclassified",
-        "sense": "קריאה יחידה במילון האב־טיפוס; טרם סווגה לשונית",
+        "partOfSpeech": "noun",
+        "sense": "חודש",
         "reviewStatus": "draft"
       }
     ]

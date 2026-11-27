@@ -19,7 +19,6 @@ Examples:
 - ספר: סֵפֶר (noun), סָפַר (verb), סַפָּר (noun).
 - מלך: מֶלֶךְ (noun), מָלַךְ (verb).
 - דרך: דֶּרֶךְ (noun), דָּרַךְ (verb).
-- חדש: חָדָשׁ (adjective), חֹדֶשׁ (noun).
 
 ## Source of truth
 
