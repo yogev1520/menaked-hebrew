@@ -1,20 +1,14 @@
 import type { NiqqudEngine, NiqqudOptions } from "./niqqud-engine";
+import { basicDictionary } from "../dictionary/basic";
 
 /**
- * Small deterministic dictionary for UI and integration tests only.
- * This is intentionally not presented as an actual Hebrew niqqud model.
+ * Small deterministic adapter over the shared basic dictionary.
+ * This is for UI and integration tests only, not a production niqqud model.
  */
 export class MockNiqqudEngine implements NiqqudEngine {
   readonly id = "mock-dictionary-v1";
 
-  private readonly dictionary: Readonly<Record<string, string>> = {
-    "שלום": "שָׁלוֹם",
-    "עולם": "עוֹלָם",
-    "עברית": "עִבְרִית",
-    "מנקד": "מְנַקֵּד",
-    "ספר": "סֵפֶר",
-    "ילדים": "יְלָדִים",
-  };
+  private readonly dictionary = basicDictionary;
 
   async vocalize(text: string, options: NiqqudOptions = {}): Promise<string> {
     if (options.preserveExistingNiqqud && /[\u05B0-\u05C7]/.test(text)) {

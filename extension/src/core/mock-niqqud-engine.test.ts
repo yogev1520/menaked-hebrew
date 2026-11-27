@@ -8,8 +8,12 @@ describe("MockNiqqudEngine", () => {
     await expect(engine.vocalize("שלום, עולם!")).resolves.toBe("שָׁלוֹם, עוֹלָם!");
   });
 
+  it("uses the shared basic dictionary", async () => {
+    await expect(engine.vocalize("מילה")).resolves.toBe("מִלָּה");
+  });
+
   it("leaves unknown words unchanged", async () => {
-    await expect(engine.vocalize("מילה לא מוכרת")).resolves.toBe("מילה לא מוכרת");
+    await expect(engine.vocalize("פוטוסינתזה")).resolves.toBe("פוטוסינתזה");
   });
 
   it("can preserve text that already contains niqqud", async () => {
