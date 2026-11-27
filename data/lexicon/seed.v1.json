@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "language": "he",
+  "status": "draft",
+  "description": "Small project-authored seed dataset for schema and workflow development. Not connected to the extension runtime. All entries require linguistic review before production use.",
+  "normalization": "NFC for lookup keys; preserve original source text separately.",
+  "entries": [
+    {
+      "id": "he-shalom",
+      "surface": "שלום",
+      "readings": [
+        {
+          "id": "peace",
+          "vocalized": "שָׁלוֹם",
+          "lemma": "שָׁלוֹם",
+          "partOfSpeech": "noun",
+          "sense": "Peace; greeting",
+          "reviewStatus": "draft"
+        }
+      ]
+    },
+    {
+      "id": "he-olam",
+      "surface": "עולם",
+      "readings": [
+        {
+          "id": "world",
+          "vocalized": "עוֹלָם",
+          "lemma": "עוֹלָם",
+          "partOfSpeech": "noun",
+          "sense": "World; universe; eternity",
+          "reviewStatus": "draft"
+        }
+      ]
+    },
+    {
+      "id": "he-bayit",
+      "surface": "בית",
+      "readings": [
+        {
+          "id": "house",
+          "vocalized": "בַּיִת",
+          "lemma": "בַּיִת",
+          "partOfSpeech": "noun",
+          "sense": "House; home",
+          "reviewStatus": "draft"
+        }
+      ]
+    },
+    {
+      "id": "he-mayim",
+      "surface": "מים",
+      "readings": [
+        {
+          "id": "water",
+          "vocalized": "מַיִם",
+          "lemma": "מַיִם",
+          "partOfSpeech": "noun",
+          "sense": "Water",
+          "reviewStatus": "draft"
+        }
+      ]
+    },
+    {
+      "id": "he-sefer",
+      "surface": "ספר",
+      "readings": [
+        {
+          "id": "book",
+          "vocalized": "סֵפֶר",
+          "lemma": "סֵפֶר",
+          "partOfSpeech": "noun",
+          "sense": "A book",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "counted",
+          "vocalized": "סָפַר",
+          "lemma": "סָפַר",
+          "partOfSpeech": "verb",
+          "sense": "Counted",
+          "features": {
+            "binyan": "qal",
+            "tense": "past",
+            "person": "third",
+            "gender": "masculine",
+            "number": "singular"
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "barber",
+          "vocalized": "סַפָּר",
+          "lemma": "סַפָּר",
+          "partOfSpeech": "noun",
+          "sense": "A barber",
+          "reviewStatus": "draft"
+        }
+      ]
+    },
+    {
+      "id": "he-melekh",
+      "surface": "מלך",
+      "readings": [
+        {
+          "id": "king",
+          "vocalized": "מֶלֶךְ",
+          "lemma": "מֶלֶךְ",
+          "partOfSpeech": "noun",
+          "sense": "A king",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "reigned",
+          "vocalized": "מָלַךְ",
+          "lemma": "מָלַךְ",
+          "partOfSpeech": "verb",
+          "sense": "Reigned",
+          "features": {
+            "binyan": "qal",
+            "tense": "past",
+            "person": "third",
+            "gender": "masculine",
+            "number": "singular"
+          },
+          "reviewStatus": "draft"
+        }
+      ]
+    },
+    {
+      "id": "he-derekh",
+      "surface": "דרך",
+      "readings": [
+        {
+          "id": "way",
+          "vocalized": "דֶּרֶךְ",
+          "lemma": "דֶּרֶךְ",
+          "partOfSpeech": "noun",
+          "sense": "A way; road; path",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "stepped",
+          "vocalized": "דָּרַךְ",
+          "lemma": "דָּרַךְ",
+          "partOfSpeech": "verb",
+          "sense": "Stepped; trod",
+          "features": {
+            "binyan": "qal",
+            "tense": "past",
+            "person": "third",
+            "gender": "masculine",
+            "number": "singular"
+          },
+          "reviewStatus": "draft"
+        }
+      ]
+    },
+    {
+      "id": "he-chadash",
+      "surface": "חדש",
+      "readings": [
+        {
+          "id": "new",
+          "vocalized": "חָדָשׁ",
+          "lemma": "חָדָשׁ",
+          "partOfSpeech": "adjective",
+          "sense": "New; masculine singular",
+          "features": {
+            "gender": "masculine",
+            "number": "singular"
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "month",
+          "vocalized": "חֹדֶשׁ",
+          "lemma": "חֹדֶשׁ",
+          "partOfSpeech": "noun",
+          "sense": "A month",
+          "reviewStatus": "draft"
+        }
+      ]
+    }
+  ]
+}
