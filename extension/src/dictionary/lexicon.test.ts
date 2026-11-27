@@ -1,0 +1,27 @@
+import { describe, expect, it } from "vitest";
+import { getLexiconEntry, getUnambiguousVocalization } from "./lexicon";
+
+describe("rich Hebrew lexicon", () => {
+  it("returns a single reading for an unambiguous prototype entry", () => {
+    expect(getUnambiguousVocalization("שלום")).toBe("שָׁלוֹם");
+  });
+
+  it("exposes all readings for an ambiguous spelling", () => {
+    expect(getLexiconEntry("ספר")?.readings.map((reading) => reading.vocalized))
+      .toEqual(["סֵפֶר", "סָפַר", "סַפָּר"]);
+  });
+
+  it.each(["ספר", "מלך", "דרך"])(
+    "does not choose an arbitrary reading for %s",
+    (surface) => {
+      expect(getUnambiguousVocalization(surface)).toBeUndefined();
+    },
+  );
+
+  it("keeps existing basic vocabulary and distinct spellings available", () => {
+    expect(getUnambiguousVocalization("מילה")).toBe("מִלָּה");
+    expect(getUnambiguousVocalization("עברית")).toBe("עִבְרִית");
+    expect(getUnambiguousVocalization("חדש")).toBe("חָדָשׁ");
+    expect(getUnambiguousVocalization("חודש")).toBe("חֹדֶשׁ");
+  });
+});
